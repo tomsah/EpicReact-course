@@ -37,8 +37,9 @@ function useToggle({
   const {current: initialState} = React.useRef({on: initialOn})
   const [state, dispatch] = React.useReducer(reducer, initialState)
 
-  const onIsControlled = controlledOn != null
+  const onIsControlled = controlledOn != null //controlledOn is a props passed
   const on = onIsControlled ? controlledOn : state.on
+
 
   const {current: onWasControlled} = React.useRef(onIsControlled)
   React.useEffect(() => {
